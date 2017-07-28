@@ -1,0 +1,23 @@
+0	lui $17 0x4000 #correct
+1	addiu $17 $17 0x00004 #correct
+2	addiu $16 $0 0x000AA #correct
+3	sw $0 0x0000($17) #未检查 这条指令的翻译对吗 
+4	j 0x00100000 #这条引发(0x00100000)nop操作进而进入80000004 100004写到$26
+5	jal 0x00000000
+6	sll $0 $0 0x00000
+7	<unknown instruction>
+8	<unknown instruction>
+9	sll $0 $0 0x00000
+10	or $17 $19 $20
+11	j 0x00000015
+12	add $17 $19 $20
+13	j 0x00000015
+14	slt $17 $19 $20
+15	beq $0 $17 0x00002
+16	sub $17 $20 $19
+17	j 0x00000015
+18	sub $17 $19 $20
+19	j 0x00000015
+20	<unknown instruction>
+21	sw $17 0x0003($16)
+22	j 0x00000001

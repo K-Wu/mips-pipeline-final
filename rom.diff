@@ -1,0 +1,27 @@
+0+  unknown instruction
+1x	lui $17 0x8000 #correct
+2	addiu $17 $17 0x00004 #correct
+3	addiu $16 $0 0x000AA #correct
+4	sw $17 0x0003($16) #未检查 这条指令的翻译对吗 
+--	j 0x00100000 
+5x	jal 0x00000007
+6   sll $0 $0 0
+7+	sll $4 $17 0x00004
+
+--	<unknown instruction>
+--	<unknown instruction>
+8+	sra $5 $17 0x00003
+9x	or $17 $4 $17
+--	j 0x00000015
+10x	add $17 $4 $17 #$19>$20 $17=0
+--	j 0x00000015
+11+ sw $17 0x0003($16)
+12	slt $17 $19 $20
+13x	beq $0 $17 0x00001
+14	sub $17 $20 $19
+--	j 0x00000015
+15	sub $17 $19 $20
+--	j 0x00000015
+--	<unknown instruction>
+16+	lw $17 0x0003($16)
+17	j 0x00000001

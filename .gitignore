@@ -1,0 +1,7 @@
+mips-pipeline/
+*.bak
+*.mti
+*.mpf
+*.wlf
+*.vstf
+wlft*
